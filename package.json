@@ -1,0 +1,23 @@
+{
+  "name": "outlook-crm-extractor",
+  "version": "1.0.0",
+  "description": "Application desktop pour extraire des contacts depuis Outlook via IMAP",
+  "main": "electron/main.js",
+  "scripts": {
+    "dev": "concurrently \"npm run dev:backend\" \"npm run dev:frontend\" \"npm run dev:electron\"",
+    "dev:backend": "cd backend && npm run dev",
+    "dev:frontend": "cd frontend && npm run dev",
+    "dev:electron": "wait-on http://localhost:5173 && electron .",
+    "build": "cd frontend && npm run build",
+    "start": "electron .",
+    "install:all": "npm install && cd backend && npm install && cd ../frontend && npm install"
+  },
+  "keywords": ["crm", "outlook", "contacts", "electron"],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "concurrently": "^8.2.2",
+    "electron": "^28.1.0",
+    "wait-on": "^7.2.0"
+  }
+}
